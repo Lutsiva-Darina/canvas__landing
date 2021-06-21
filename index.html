@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>CANVAS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="text-hide.css">
+    <link rel="stylesheet" type="text/css" href="menu.css">
+    <script src="https://unpkg.com/jparticles/browser/jparticles.all.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container header__main">
+                <div class="header__body">
+                    <a href="#" class="header__logo">
+                        <img src="img/logo_html.png" width="50%" alt="logo">
+                    </a>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="header__list">
+                            <li>
+                                <a href="#" class="header__link">HTML</a>
+                            </li>
+                            <li>
+                                <a href="#" class="header__link">CSS</a>
+                            </li>
+                            <li>
+                                <a href="#" class="header__link">Bootstrap</a>
+                            </li>
+                            <li>
+                                <a href="#" class="header__link">JavaScript</a>
+                            </li>
+                            <li>
+                                <a href="#" class="header__link">WordPress</a>
+                            </li>
+                            <li>
+                                <a href="#" class="header__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="header__content">
+            <div id="demo"></div>
+            <div class="head-main ">
+                <div class="head-main-block ">
+                    <p class="main-block-text ">Анимация &lt;CANVAS&gt;</p>
+                </div>
+            </div>
+        </div>
+        <section class="about-canvas ">
+            <div class="section-column-2 ">
+                <div id='w'>
+                    <canvas id="space"></canvas>
+                    <div id="warp">WARP SPEED</a>
+                    </div>
+                </div>
+                <div class="about-info ">
+                    <div class="text-info ">
+                        <p class="text-info-header">Canvas (англ. canvas — «холст»)</p>
+                        <p class="text-info-body">это HTML5-элемент, который предназначен для создания растровых 2D-изображений с помощью скриптов JavaScript. В основном, &lt;canvas&gt; используется при рисовании графиков и некоторых браузерных игр, а также может применяться для
+                            встраивания видео на страницу и для аппаратного ускорения трехмерной графики в WebGL.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </section>
+    <section class="special-canvas section">
+        <div class="content-wrapper">
+            <p class="section-header">Основные особенности &lt;Canvas&gt;:
+            </p>
+            <div class="demo">
+                <input type="checkbox" id="hd-1" class="hide" />
+                <label for="hd-1" class="lorem-ipsum">
+                    <p><span class="number">1.</span>Он выглядит как элемент &lt;img&gt;</p>
+                </label>
+                <div>
+                    Он выглядит как элемент <img>, но его отличие в том, что он не имеет атрибутов src и alt
+                </div>
+                <br/>
+                <br/>
+                <input type="checkbox" id="hd-2" class="hide" />
+                <label for="hd-2" class="lorem-ipsum">
+                    <p><span class="number">2.</span>Имеет только два атрибута - ширину и высоту</p>
+                </label>
+                <div>
+                    Имеет только два атрибута - ширину и высоту. Они не обязательны и могут быть выставлены с использованием свойств DOM. Сanvas по умолчанию шириной 300 пикселей и высотой 150 пикселей.
+                </div>
+                <br/>
+                <br/>
+                <input type="checkbox" id="hd-3" class="hide" />
+                <label for="hd-3" class="lorem-ipsum">
+                    <p><span class="number">3.</span> Может быть стилизован также, как любое изображение</p>
+                </label>
+                <div>
+                    Может быть стилизован также, как любое изображение. (margin, border, background, и т. д.). Когда стили не указаны, canvas будет по умолчанию абсолютно прозрачным.
+                </div>
+                <br/>
+                <br/>
+                <input type="checkbox" id="hd-4" class="hide" />
+                <label for="hd-4" class="lorem-ipsum4">
+                    <p><span class="number">4.</span>Требует закрывающийся тег (&lt;canvas&gt;)</p>
+                </label>
+            </div>
+        </div>
+    </section>
+    <section class="canvas-steps section">
+        <div class="content-wrapper">
+            <p class="section-header">Основные шаги создания анимации:
+            </p>
+            <div class="demo">
+                <input type="checkbox" id="hd-steps1" class="hide" />
+                <label for="hd-steps1" class="lorem-ipsum">
+                    <p><span class="number">1.</span>Очистить canvas</p>
+                </label>
+                <div>
+                    Если фигура, которую вы собираетесь нарисовать, не занимает всю площадь canvas (как фон, например), то всё что было нарисовано ранее необходимо стереть. Проще всего это сделать при помощи метода clearRect().
+
+                </div>
+                <br/>
+                <br/>
+                <input type="checkbox" id="hd-steps2" class="hide" />
+                <label for="hd-steps2" class="lorem-ipsum">
+                    <p><span class="number">2.</span>Сохранить изначальное состояние canvas</p>
+                </label>
+                <div>
+                    Если вы изменяете любые настройки (такие как стили, трансформации и т.п.), которые затрагивают состояние canvas и вы хотите убедиться, что оригинальное состояние используется каждый раз, когда был отрисован кадр, то вам следует сохранить это оригинальное
+                    состояние.
+
+                </div>
+                <br/>
+                <br/>
+                <input type="checkbox" id="hd-steps3" class="hide" />
+                <label for="hd-steps3" class="lorem-ipsum">
+                    <p><span class="number">3.</span>Нарисовать анимированные фигуры</p>
+                </label>
+                <div>
+                    Шаг на котором вы собственно отрисовываете кадр.
+                </div>
+                <br/>
+                <br/>
+                <input type="checkbox" id="hd-steps4" class="hide" />
+                <label for="hd-steps4" class="lorem-ipsum">
+                    <p><span class="number">4.</span>Восстановить состояние canvas
+                    </p>
+                </label>
+                <div>
+                    Если вы сохраняли состояние, восстановите его, прежде чем отрисовывать новый кадр
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="browser-support section ">
+        <div class="content-wrapper ">
+            <p class="section-header ">Поддержка браузера
+            </p>
+            <div class="section-column-2 ">
+                <p class="text-info text-info-support ">
+                    Из-за того, что старые браузеры (в особенности, версии Internet Explorer раннее чем 9) не поддерживают элемент &lt;Canvas&gt;, следует предоставить запасное содержимое для отображения этими браузерами. Предоставляем альтернативное содержимое внутри элемента
+                    &lt;Canvas&gt;. Браузеры, которые не поддерживают &lt;Canvas&gt; проигнорируют container и отобразят запасное содержимое этого тега. Браузеры, которые поддерживают &lt;Canvas&gt; проигнорируют запасное содержимое, и просто нормально
+                    отобразят canvas. Например, мы можем предоставить текстовое описание содержимого canvas или предоставить статичное изображение динамически отображаемого содержимого.
+                </p>
+                <p class="code browser-support-code ">
+                    &lt;canvas id="stockGraph " width="150 "<br>height="150 "><br><span class="enter ">current stock price: $3.15 +0.15</span>&lt;/canvas><br><br> &lt;canvas id="clock " width="150 "<br>height="150 "><br><span class="enter ">&lt;img
+                            src="images/clock.png "</span><br>width="150 " height="150 " alt=" "/><br>&lt;/canvas>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="browser-check section ">
+        <div class="content-wrapper ">
+            <p class="section-header ">Проверка поддержки браузера
+            </p>
+            <div class="section-column-2 ">
+                <p class="text-info text-info-support ">
+                    Ранее уже упоминалось, что в браузерах, которые не поддерживают &lt;canvas> отображается запасное содержимое. Но помимо этого, определить, поддерживает ли браузер canvas, можно прямо из кода, проверив наличие метода getContext(). Код с запасным содержимым,
+                    который мы приводили Выше, становится следующим:
+                </p>
+                <p class="code browser-check-code ">
+
+                    var canvas = <br>document.getElementById('tutorial');<br> if (canvas.getContext){<br>
+                    <span class="enter ">var ctx = canvas.getContext('2d');<br>// drawing code here</span>
+                    <br>} else {<br> // canvas-unsupported code here</span><br> }
+
+
+
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="easy-animation section ">
+        <div class="content-wrapper ">
+            <p class="section-header ">Простая анимация
+            </p>
+            <div class="section-column-2 ">
+                <p class="code easy-animation-code easy-animation2-code ">
+                    var canvas;<br> var context;
+                    <br> window.onload = function() {<br> // Определение контекста рисования<br> canvas = <br>document.getElementById("drawingCanvas ");<br> context = canvas.getContext("2d ");
+                    <br> // Обновляем холст через 0.02 секунды<br> setTimeout("drawFrame() ", 20); }
+                </p>
+                <p class="text-info text-info-support ">
+                    Сделать анимацию из элемента на холсте HTML5 достаточно просто. Для этого устанавливается таймер, который постоянно вызывает элемент, обычно 30 или 40 раз в секунду. При каждом вызове код полностью обновляет содержимое всего холста. Если код написан правильно,
+                    постоянно сменяющиеся кадры сольются в плавную, реалистичную анимацию.
+
+
+                </p>
+
+            </div>
+            <div class="animation-example2 ">
+                <div class="section-column-2 ">
+                    <p class="code easy-animation2-code ">
+                        // Устанавливаем начальную позицию квадрата<br> var squarePosition_x = 10;<br> var squarePosition_y = 0;<br> <br> function drawFrame() {<br> // Очистить холст<br>context.clearRect(0, 0, canvas.width,<br> canvas.height);<br>// Вызываем
+                        метод beginPath(), чтобы убедиться,<br> // что мы не рисуем часть уже нарисованного<br>содержимого холста<br>context.beginPath();<br>// Рисуем квадрат размером 10x10 пикселов в текущей<br>позиции<br> context.rect(squarePosition_x,<br>squarePosition_y,
+                        10, 10);<br> context.lineStyle = "#109bfc ";<br> context.lineWidth = 1;<br> context.stroke();<br><br> // Перемещаем квадрат вниз на 1 пиксел (где он будет<br>// прорисован в следующем кадре)<br>squarePosition_y += 1;<br><br>//
+                        Рисуем следующий кадр через 20 миллисекунд<br>setTimeout("drawFrame() ", 20);<br>}
+                    </p>
+                    <p class="text-info text-info-support ">
+                        Этот вызов функции setTimeout() является ключевой частью любой задачи анимации. Допустим, что мы хотим создать анимацию квадрата, падающего сверху вниз страницы. Для этого нам нужно отслеживать позицию квадрата, используя две глобальные переменные. После
+                        нам надо просто изменять позицию при каждом исполнении функции drawFrame(), а потом перерисовывать квадрат в новой позиции:
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="result ">
+        <div class="content-wrapper ">
+            <p class="text-info text-result ">
+                Результатом выполнения этого кода будет квадрат, падающий с верхнего края холста и исчезающий после прохода через нижний край.<br> Для более утонченной анимации потребуются более сложные вычисления. Например, предыдущий пример можно немного
+                усложнить, ускоряя падение квадрата, чтобы эмулировать силу притяжения, или отскакивать от "пола ", для чего потребуются более сложные математические расчеты, чем для единообразного движения вниз. Но основной подход — установка таймера,
+                вызов функции рисования и обновление содержимого всего холста — остается точно таким же.
+            </p>
+        </div>
+    </section>
+    <div class="content-wrapper content-form">
+        <section class="content-contact">
+            <h1>Контакты</h1>
+            <div class="contact-block">
+                <div class="block-line">
+                    <a href="https://mail.google.com/mail/u/0/#inbox">
+                        <img src="img/mail.svg" alt="mail" class="img-contact" width="30px">
+                        <p class="contact-text">Почта</p>
+                    </a>
+                </div>
+                <div class="block-line">
+                    <a href="https://www.instagram.com/lera_sncfox/">
+                        <img src="img/net.svg" alt="mail" class="img-contact" width="30px">
+                        <p class="contact-text">Мы в соцсетях</p>
+                    </a>
+                </div>
+                <div class="block-line">
+                    <a href="https://www.google.com/maps?q=ghjcgtrn+yferb&rlz=1C1CHBD_enUA909UA909&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMggIABAWEAoQHjIICAAQFhAKEB4yCAgAEBYQChAeMggIABAWEAoQHjIICAAQFhAKEB46BAgAEEM6CgguEMcBEK8BEEM6AggAOgUIABCRAjoCCC46BAgAEAo6CgguEMcBEK8BEAo6BAguEAo6DwguEMcBEK8BEAoQKhCTAjoECAAQHjoGCAAQChAeOgYIABAKECpQzY6oAVi7tKgBYJ-4qAFoAXACeACAAY8BiAHiDZIBBDIuMTOYAQCgAQGqAQdnd3Mtd2l6sAEAwAEB&uact=5&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiDx7y55oXxAhX2CRAIHUXMDM0Q_AUoAXoECAEQAw">
+                        <img src="img/place.svg" alt="mail" class="img-contact" width="30px">
+                        <p class="contact-text">Где мы находимся</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="form-container">
+            <form>
+                <h1>Оставить заявку</h1>
+                <input type="text" id="fname" name="fname" value="Имя *" class="form-input"><br>
+                <input type="text" id="lname" name="lname" value="Телефон *" class="form-input"><br>
+                <input type="text" id="lname" name="lname" value="Эл. почта *" class="form-input"><br>
+                <div class="input-sub">
+                    <button class="form-button">отправить</button>
+                    <input type="checkbox" id="checkbox-id" />
+                    <label for="checkbox-id" class="check-label">Соглашаюсь на обработку персональных 
+                        данных и получение информационных
+                        сообщений</label>
+
+                </div>
+
+            </form>
+        </section>
+    </div>
+
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="flowtype.js"></script>
+    <script src="canvas.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        $(document).ready(function() {
+            $('.header__burger').click(function(event) {
+                $('.header__burger,.header__menu').toggleClass('active');
+                $('body').toggleClass('lock');
+            });
+        });
+        new JParticles.Particle('#demo', {
+            color: '#25bfff',
+            lineShape: 'spider',
+            range: 3000,
+            proximity: 100,
+            parallax: true,
+        })
+        Object.assign(JParticles.Particle.defaultConfig, {
+            opacity: 1,
+            color: ['blue', 'blue', 'blue'],
+            maxSpeed: 2,
+            minSpeed: 1.2,
+        })
+
+        $('body').flowtype({
+            minimum: 500,
+            maximum: 1200,
+            minFont: 12,
+            maxFont: 40,
+            fontRatio: 30
+        });
+    </script>
+
+</body>
+
+
+</html>

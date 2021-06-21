@@ -1,0 +1,116 @@
+/* скрываем чекбоксы и блоки с содержанием */
+
+.hide {
+    display: none;
+}
+
+.hide+label~div {
+    display: none;
+}
+
+
+/* оформляем текст label */
+
+.block-main-hide {
+    /* filter: drop-shadow(0px 3px 20px #3FDCE7);
+    border-radius: 60px;
+    background-color: black;
+    border: linear-gradient(180deg, #48D138 -101.58%, #3FDCE7 3.35%, rgba(207, 13, 153, 0.73) 127.36%, rgba(72, 209, 56, 0) 359.01%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: transparent; */
+    padding: 1rem;
+    color: white;
+    width: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(180deg, #48D138 -101.58%, #3FDCE7 3.35%, rgba(207, 13, 153, 0.73) 127.36%, rgba(72, 209, 56, 0) 359.01%);
+    /* border-image: linear-gradient( to bottom, rgba(63, 220, 231, 1), rgba(63, 220, 231, 0, 09)) 100%; */
+}
+
+.hide+label {
+    color: rgba(63, 220, 231, 1);
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+/* вид текста label при активном переключателе */
+
+
+/* .hide:checked+label {
+   
+    border-bottom: 0;
+} */
+
+
+/* когда чекбокс активен показываем блоки с содержанием  */
+
+.hide:checked+label+div {
+    display: block;
+    padding-top: 30px;
+    font-size: 0.6em;
+    max-width: 80%;
+    text-align: justify;
+    margin-left: 70px;
+}
+
+
+/* demo контейнер */
+
+.lorem-ipsum {
+    width: 85%;
+    margin: 0 auto;
+    border: 3px solid rgba(63, 220, 231, 1);
+    border-radius: 60px;
+    background-color: black;
+    border-bottom: none;
+    position: relative;
+    z-index: 7;
+    padding: 15px;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+.lorem-ipsum p,
+.lorem-ipsum4 p {
+    margin-left: 15px;
+}
+
+.lorem-ipsum:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    border-radius: 60px;
+}
+
+.lorem-ipsum .number,
+.lorem-ipsum4 .number {
+    margin-right: 15px;
+}
+
+.lorem-ipsum4 {
+    cursor: text;
+    border: 3px solid rgba(63, 220, 231, 1);
+    width: 85%;
+    margin: 0 auto;
+    border-radius: 60px;
+    background-color: black;
+    position: relative;
+    z-index: 7;
+    padding: 15px;
+    font-size: 0.6em;
+}
+
+.block {
+    height: 300px;
+}
+
+@media (max-width:450px) {
+    .hide:checked+label+div {
+        line-height: 1.6;
+        margin-left: 30px;
+    }
+}
